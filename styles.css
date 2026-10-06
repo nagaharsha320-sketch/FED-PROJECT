@@ -1,0 +1,269 @@
+```css
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --ink: #222;
+    --muted: #707780;
+    --line: #e2e5e8;
+    --accent: #00bcd4;
+    --accent-dark: #008fa1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+}
+
+/* Navigation */
+nav {
+    background: #222;
+    padding: 16px 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav h2 {
+    color: white;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+nav div {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #00bcd4, #008fa1);
+    color: white;
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.hero h1 {
+    font: 700 42px "Space Grotesk", sans-serif;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #eafcff;
+}
+
+.hero button {
+    margin-top: 25px;
+    background: white;
+    color: #008fa1;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: translateY(-2px);
+}
+
+/* Events Section */
+.events {
+    padding: 50px 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.events h2 {
+    text-align: center;
+    font: 600 28px "Space Grotesk", sans-serif;
+    margin-bottom: 35px;
+}
+
+/* Event Cards */
+.event-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.event-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.event-card h3 {
+    color: var(--accent-dark);
+    font: 600 19px "Space Grotesk", sans-serif;
+    margin-bottom: 18px;
+}
+
+.event-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+.event-card strong {
+    color: var(--ink);
+}
+
+.event-card button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 11px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.event-card button:hover {
+    background: var(--accent-dark);
+}
+
+/* Registration Section */
+.registration {
+    background: white;
+    max-width: 550px;
+    margin: 30px auto 60px;
+    padding: 32px;
+    border-radius: 15px;
+    border: 1px solid var(--line);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.registration h2 {
+    text-align: center;
+    font: 600 24px "Space Grotesk", sans-serif;
+    margin-bottom: 25px;
+}
+
+.registration input,
+.registration select {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0;
+    border: 1px solid #d5d9dd;
+    border-radius: 7px;
+    outline: none;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.registration input:focus,
+.registration select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(0,188,212,0.1);
+}
+
+.registration button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 12px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.registration button:hover {
+    background: var(--accent-dark);
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+
+    nav {
+        padding: 15px 25px;
+    }
+
+    .event-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav div {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 55px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .events {
+        padding: 35px 20px;
+    }
+
+    .event-container {
+        grid-template-columns: 1fr;
+    }
+
+    .registration {
+        margin: 20px;
+        padding: 25px;
+    }
+}
+```
